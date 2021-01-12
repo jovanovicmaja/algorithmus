@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^12.6.0",
     "bootstrap": "^4.5.3",
     "fast-levenshtein": "^3.0.0",
+    "fastest-levenshtein": "^1.0.12",
     "jquery": "^3.5.1",
     "navbar": "^2.1.0",
     "react": "^17.0.1",

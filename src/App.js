@@ -1,14 +1,19 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Navbar, Form, FormControl, Button } from 'react-bootstrap';
+const { distance } = require('fastest-levenshtein');
 
 const App = () => {
   const [searchString, setSearchString] = useState('');
 
   function search() {
-    console.log('Search function: ' + searchString);
     let text = document.getElementById('text').textContent;
     const words = text.split(' ');
+    words.forEach((word) => {
+      if (distance(word, searchString) === 0) {
+        // TODO: highlight word
+      }
+    });
   }
 
   return (
