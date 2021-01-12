@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Navbar from 'react-bootstrap/Navbar';
-import Form from 'react-bootstrap/Form';
-import FormControl from 'react-bootstrap/FormControl';
-import Button from 'react-bootstrap/Button';
+import { Navbar, Form, FormControl, Button } from 'react-bootstrap';
+import services from '../src/Services';
 
 const App = () => {
+  const [searchString, setSearchString] = useState('');
+
+  function search() {
+    console.log('Search function: ' + searchString);
+  }
+
   return (
     <div>
       <header>
@@ -14,8 +18,16 @@ const App = () => {
             Levenstein-Distance-Algorithm
           </Navbar.Brand>
           <Form inline className='float-left'>
-            <FormControl type='text' placeholder='Search' className='mr-sm-2' />
-            <Button variant='outline-light'>Search</Button>
+            <FormControl
+              type='text'
+              placeholder='Search'
+              className='mr-sm-2'
+              onChange={(e) => setSearchString(e.target.value)}
+              id='search'
+            />
+            <Button variant='outline-light' onClick={search}>
+              Search
+            </Button>
           </Form>
         </Navbar>
       </header>
