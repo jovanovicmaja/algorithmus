@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Navbar, Form, FormControl, Button } from 'react-bootstrap';
-import services from '../src/Services';
 
 const App = () => {
   const [searchString, setSearchString] = useState('');
 
   function search() {
     console.log('Search function: ' + searchString);
+    let text = document.getElementById('text').textContent;
+    const words = text.split(' ');
   }
 
   return (
@@ -32,10 +33,10 @@ const App = () => {
         </Navbar>
       </header>
       <main style={{ margin: '20px 60px 0 60px' }}>
-        <div>
-          <h1>Lorem Ipsum Text</h1>
+        <div id='text'>
+          <h1>Lorem Ipsum Text </h1>
           <div>
-            <h2>Erster Abschnitt</h2>
+            <h2>Erster Abschnitt </h2>
             <p>
               Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
               nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
@@ -50,7 +51,7 @@ const App = () => {
             </p>
           </div>
           <div>
-            <h2>Zweiter Abschnitt</h2>
+            <h2>Zweiter Abschnitt </h2>
             <p>
               Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
               nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
@@ -74,7 +75,7 @@ const App = () => {
               placerat facer possim assum.
             </p>
             <div>
-              <h3>Untertitel</h3>
+              <h3>Untertitel </h3>
               <p>
                 Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
                 diam nonummy nibh euismod tincidunt ut laoreet dolore magna
