@@ -10,6 +10,7 @@
     "fast-levenshtein": "^3.0.0",
     "fastest-levenshtein": "^1.0.12",
     "jquery": "^3.5.1",
+    "mark.js": "^8.11.1",
     "navbar": "^2.1.0",
     "react": "^17.0.1",
     "react-bootstrap": "^1.4.3",

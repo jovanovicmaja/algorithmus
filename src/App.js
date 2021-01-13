@@ -1,17 +1,42 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Mark from 'mark.js/dist/mark.min.js';
+import './App.css';
 import { Navbar, Form, FormControl, Button } from 'react-bootstrap';
-const { distance } = require('fastest-levenshtein');
+const { distance, closest } = require('fastest-levenshtein');
 
 const App = () => {
   const [searchString, setSearchString] = useState('');
+  const [message, setMessage] = useState('');
 
   function search() {
+    let count = 0;
     let text = document.getElementById('text').textContent;
     const words = text.split(' ');
+    var context = document.querySelector('.context');
+    var instance = new Mark(context);
+    instance.unmark();
     words.forEach((word) => {
-      if (distance(word, searchString) === 0) {
-        // TODO: highlight word
+      let replaceChars = [',', '.', ';', ':'];
+      replaceChars.forEach((c) => {
+        word = word.replace(c, '');
+      });
+
+      if (distance(word.toLowerCase(), searchString.toLowerCase()) === 0) {
+        count++;
+        instance.mark(word);
+      }
+      if (count === 0) {
+        var closestWord = closest(searchString, words);
+        replaceChars.forEach((c) => {
+          closestWord = closestWord.replace(c, '');
+        });
+        setMessage([
+          'Do you mean ' + closestWord,
+          'alert alert-info text-center',
+        ]);
+      } else {
+        setMessage(['', '']);
       }
     });
   }
@@ -23,7 +48,7 @@ const App = () => {
           <Navbar.Brand className='pointer'>
             Levenstein-Distance-Algorithm
           </Navbar.Brand>
-          <Form inline className='float-left'>
+          <Form inline>
             <FormControl
               type='text'
               placeholder='Search'
@@ -38,7 +63,8 @@ const App = () => {
         </Navbar>
       </header>
       <main style={{ margin: '20px 60px 0 60px' }}>
-        <div id='text'>
+        <p className={message[1]}>{message[0]}</p>
+        <div id='text' className='context'>
           <h1>Lorem Ipsum Text </h1>
           <div>
             <h2>Erster Abschnitt </h2>
