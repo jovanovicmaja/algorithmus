@@ -18,31 +18,33 @@ Man kann Streichen, Ersetzten oder Hinzufügen.
 
 #### Detailierter
 
-Man schreibt z.B. das Wort von der unteren Ecke links nach oben und nach recht. Somit entsteht eine Tabelle. Danach vergleicht man immer den ersten Buchstaben.
+Man schreibt z.B. das Wort von der unteren Ecke links nach oben und nach rechts. Somit entsteht eine Tabelle. Danach vergleicht man immer den ersten Buchstaben.
 
 ##### Kleines Beispiel
 
-| l | e | v | e | l |
-l | 0 | 1 | 2 | 3 | 4 |
-e | 1 | 0 | 1 | 2 | 3 |
-v | 2 | 1 | 0 | 1 | 2 |
-e | 3 | 2 | 1 | 0 | 1 |
-n | 4 | 3 | 2 | 1 | 1 |
-s | 5 | 4 | 3 | 2 | 2 |
-h | 6 | 5 | 4 | 3 | 3 |
-t | 7 | 6 | 5 | 4 | 4 |
-e | 8 | 7 | 6 | 5 | 5 |
-i | 9 | 8 | 7 | 6 | 6 |
-n | 10 | 9 | 8 | 7 | 7 |
+|     | l   | e   | v   | e   | l     |
+| --- | --- | --- | --- | --- | ----- |
+| l   | 0   | 1   | 2   | 3   | 4     |
+| e   | 1   | 0   | 1   | 2   | 3     |
+| v   | 2   | 1   | 0   | 1   | 2     |
+| e   | 3   | 2   | 1   | 0   | 1     |
+| n   | 4   | 3   | 2   | 1   | 1     |
+| s   | 5   | 4   | 3   | 2   | 2     |
+| h   | 6   | 5   | 4   | 3   | 3     |
+| t   | 7   | 6   | 5   | 4   | 4     |
+| e   | 8   | 7   | 6   | 5   | 5     |
+| i   | 9   | 8   | 7   | 6   | 6     |
+| n   | 10  | 9   | 8   | 7   | **7** |
 
-Bie diesem sieht man hier unten recht die 'EndZahl' somit die 'Distanz' und dies wäre 7. Man muss 7 Mal etwas löschen, hinzufügen oder löschen. Da die ersten vier Buchstaben gleich sind, verläuft es am Anfang der Tabelle recht proportional. Doch zb in der fünften Reihe sieht man, dass es sich ändert. Da man nun zb. das 'n' zu 'l' umändern kann.
+Bie diesem sieht man hier unten recht die _EndZahl_ somit die _Distanz_ und dies wäre 7. Man muss 7 Mal etwas löschen, hinzufügen oder löschen. Da die ersten vier Buchstaben gleich sind, verläuft es am Anfang der Tabelle recht proportional. Doch zb in der fünften Reihe sieht man, dass es sich ändert. Da man nun zb. das _n_ zu _l_ umändern kann.
 
 Ein weitere Beispiel wäre:
 
-| T | i | e | r |
-T | 0 | 1 | 2 | 3 |
-o | 1 | 1 | 2 | 3 |
-r | 2 | 2 | 2 | 2|
+|     | T   | i   | e   | r     |
+| --- | --- | --- | --- | ----- |
+| T   | 0   | 1   | 2   | 3     |
+| o   | 1   | 1   | 2   | 3     |
+| r   | 2   | 2   | 2   | **2** |
 
 Hier wäre die Distanz 2.
 
